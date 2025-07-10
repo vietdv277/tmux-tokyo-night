@@ -110,10 +110,10 @@ if [ "$theme_disable_plugins" -ne 1 ]; then
 
 			plugin_output_string=""
 
-			# For datetime and battery, we run the plugin to get the content
+			# For datetime, battery, and directory, we run the plugin to get the content once
 			# For battery, the content is actually a template that will be replaced when
 			# running the script later
-			if [ "$plugin" == "datetime" ] || [ "$plugin" == "battery" ]; then
+			if [ "$plugin" == "datetime" ] || [ "$plugin" == "battery" ] || [ "$plugin" == "directory" ]; then
 				plugin_output="#[fg=${PALLETE[white]},bg=${accent_color}]${plugin_execution_string}#[none]"
 			else
 				plugin_output="#[fg=${PALLETE[white]},bg=${accent_color}]#($plugin_script_path)#[none]"
